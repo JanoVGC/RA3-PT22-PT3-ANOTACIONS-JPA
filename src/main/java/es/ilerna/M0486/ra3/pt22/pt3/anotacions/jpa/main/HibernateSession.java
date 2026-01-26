@@ -13,15 +13,15 @@ public class HibernateSession {
 		try {
 			Configuration configuration = new Configuration();
 			
-			configuration.configure(); 
-			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.anotacions.jpa.domain.Person.class);
-			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.anotacions.jpa.domain.Student.class);
-			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.anotacions.jpa.domain.Teacher.class);
+			configuration.configure();
+			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Person.class);
+			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Student.class);
+			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Teacher.class);
 
-			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.anotacions.jpa.domain.Vehicle.class);
-			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.anotacions.jpa.domain.Car.class);
-			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.anotacions.jpa.domain.Plane.class);
-			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.anotacions.jpa.domain.Motorcycle.class);
+			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Vehicle.class);
+			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Car.class);
+			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Plane.class);
+			configuration.addAnnotatedClass(es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Motorcycle.class);
 			
 			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties())

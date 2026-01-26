@@ -1,4 +1,12 @@
 package es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain;
 
-public class Car {
+import javax.persistence.Entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+public class Car extends Vehicle{
+    private Integer doors;
+    private Integer seats;
 }
