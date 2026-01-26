@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 
-public class Motorcycle {
+public class Motorcycle extends Vehicle{
 
     private boolean hasSideCar;
 }
