@@ -23,11 +23,15 @@ public abstract class Vehicle {
     private float price;
 
 
-    @ManyToOne
+    @ManyToOne // relació 1-N molts cotxes per una persona
     @JoinColumn(name = "person_id")
     private Person person;
 
-    public void SetPerson(Person person) {
+    public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public Person getPerson() {
+        return person;
     }
 }

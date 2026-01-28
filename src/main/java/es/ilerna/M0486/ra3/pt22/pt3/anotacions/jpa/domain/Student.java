@@ -6,7 +6,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("STUDENT")
+@DiscriminatorValue("STUDENT") // --> emmagatzema el tipùs de valor a la columna person_type, és a dir, un rol
 public class Student extends Person {
 
     @Column (name = "studentCode")

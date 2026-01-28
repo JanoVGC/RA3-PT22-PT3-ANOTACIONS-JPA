@@ -6,7 +6,8 @@ import java.util.List;
 
 
 @Entity // classe que forma part de la base de dades
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // comparteixen taula amb student i teacher
+@DiscriminatorColumn(name = "person_type")
 
 public abstract class Person  {
 
@@ -22,6 +23,7 @@ public abstract class Person  {
 
     @Column(length = 100)
     private int phoneNumber;
+
 
 
     public Integer getId() {
@@ -57,13 +59,15 @@ public abstract class Person  {
 
     public void addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);
-        vehicles.getFirst();
+        vehicle.setPerson(this);
+
 
     }
 
     public void removeVehicle (Vehicle vehicle) {
         vehicles.remove(vehicle);
-        vehicles.getFirst();
+        vehicle.setPerson(null);
+
     }
 
 }
