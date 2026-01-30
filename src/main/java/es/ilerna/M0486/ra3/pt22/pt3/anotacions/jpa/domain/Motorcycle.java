@@ -13,10 +13,10 @@ public class Motorcycle extends Vehicle{
     private int year;
     private int price;
 
-    public boolean gethasHasSideCar() {
+    public boolean gethasSideCar() {
         return hasSideCar;
     }
-    public void sethasHasSideCar(boolean hasSideCar) {
+    public void sethasSideCar(boolean hasSideCar) {
         this.hasSideCar = hasSideCar;
     }
     public String getBrand() {

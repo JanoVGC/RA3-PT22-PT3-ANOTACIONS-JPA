@@ -116,7 +116,7 @@ public class Main {
             Car car_1 = new Car();
             car_1.setBrand("Toyota");
             car_1.setYear(2000);
-            car_1.setPrice(18000);
+            car_1.setPrice(18000f); // --> float
             car_1.setDoors(5);
             car_1.setSeats(5);
             car_1.setPerson(student_1);
@@ -124,7 +124,7 @@ public class Main {
             Car car_2 = new Car();
             car_2.setBrand("Ford");
             car_2.setYear(2019);
-            car_2.setPrice(15000);
+            car_2.setPrice(15000f); // --> float
             car_2.setDoors(3);
             car_2.setSeats(4);
             car_2.setPerson(student_2);
@@ -134,7 +134,7 @@ public class Main {
             Plane plane_1 = new Plane();
             plane_1.setBrand("Cessna");
             plane_1.setYear(2015);
-            plane_1.setPrice(120000);
+            plane_1.setPrice(120000f); // --> float
             plane_1.setTailNumber(111111);
             plane_1.setAutopilot(true);
             plane_1.setPerson(teacher_1);
@@ -142,8 +142,8 @@ public class Main {
             Plane plane_2 = new Plane();
             plane_2.setBrand("Boeing");
             plane_2.setYear(2010);
-            plane_2.setPrice(900000);
-            plane_1.setTailNumber(222222);
+            plane_2.setPrice(900000f); // --> float
+            plane_2.setTailNumber(222222);
             plane_2.setAutopilot(false);
             plane_2.setPerson(student_3);
 
@@ -152,16 +152,16 @@ public class Main {
             Motorcycle motorcycle_1 = new Motorcycle();
             motorcycle_1.setBrand("Yamaha");
             motorcycle_1.setYear(2021);
-            motorcycle_1.setPrice(9000);
-            motorcycle_1.sethasHasSideCar(true);
+            motorcycle_1.setPrice(9000f);// --> float
+            motorcycle_1.sethasSideCar(true);
             motorcycle_1.setPerson(student_2);
 
             Motorcycle motorcycle_2 = new Motorcycle();
-            motorcycle_1.setBrand("Harley-Davidson");
-            motorcycle_1.setYear(2018);
-            motorcycle_1.setPrice(20000);
-            motorcycle_1.sethasHasSideCar(true);
-            motorcycle_1.setPerson(teacher_3);
+            motorcycle_2.setBrand("Harley-Davidson");
+            motorcycle_2.setYear(2018);
+            motorcycle_2.setPrice(20000f);// --> float
+            motorcycle_2.sethasSideCar(true);
+            motorcycle_2.setPerson(teacher_3);
 
 
             // persist --> guarda la nova entitat de l'objecte a la base de dades
@@ -181,6 +181,10 @@ public class Main {
 
             session.persist(motorcycle_1);
             session.persist(motorcycle_2);
+
+
+            transaction.commit();
+            System.out.println("Fase 1 completada correctament!");
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -238,20 +242,6 @@ public class Main {
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
