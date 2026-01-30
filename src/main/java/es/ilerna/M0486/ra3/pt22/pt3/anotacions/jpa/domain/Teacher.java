@@ -1,5 +1,6 @@
 package es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 @DiscriminatorValue("TEACHER")
 public class Teacher extends Person{
 
+    @Column(length = 50)
     private String teacherCode;
 
 
