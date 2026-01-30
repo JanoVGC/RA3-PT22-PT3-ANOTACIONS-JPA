@@ -214,6 +214,18 @@ public class Main {
 
     private static void fase3() {
 
+        Session session = HibernateSession.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            session.close();
+        }
+
     }
 
 
