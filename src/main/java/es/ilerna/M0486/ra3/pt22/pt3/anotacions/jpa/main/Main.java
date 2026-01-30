@@ -165,18 +165,20 @@ public class Main {
 
 
             // persist --> guarda la nova entitat de l'objecte a la base de dades
-
             session.persist(student_1);
             session.persist(student_2);
             session.persist(student_3);
+
             session.persist(teacher_1);
             session.persist(teacher_2);
             session.persist(teacher_3);
 
             session.persist(car_1);
             session.persist(car_2);
+
             session.persist(plane_1);
             session.persist(plane_2);
+
             session.persist(motorcycle_1);
             session.persist(motorcycle_2);
 
@@ -188,6 +190,26 @@ public class Main {
 
     private static void fase2() {
 
+        Session session = HibernateSession.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+            Vehicle vehicle = session.get(Vehicle.class, 1); // es fa una lectura READ on el vehicle amb l'id 1 es recupera
+
+            // actualitzacio UPDATE on es treu la relació del vehicle amb la persona
+            if (vehicle != null) {
+                vehicle.setPerson(null);
+            }
+
+            transaction.commit();
+
+            System.out.println("Fase 2 completada correctament!");
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            session.close();
+        }
     }
 
     private static void fase3() {
