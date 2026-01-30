@@ -10,4 +10,14 @@ import java.util.List;
 public class Teacher extends Person{
 
     private String teacherCode;
+
+
+    public String getTeacherCode() {
+        return getTeacherCode();
+    }
+    public void setTeacherCode(String teacherCode) {
+        this.teacherCode = teacherCode;
+    }
 }
+
+
