@@ -218,6 +218,17 @@ public class Main {
         Transaction transaction = session.beginTransaction();
 
         try {
+            Vehicle vehicle = session.get(Vehicle.class, 1); // es fa una lectura READ on el vehicle amb l'id 1 es recupera
+
+            // actualitzacio UPDATE on es treu la relació del vehicle amb la persona
+            if (vehicle != null) {
+                vehicle.setBrand("Seat");
+                vehicle.setPrice(20000);
+                vehicle.setYear(2022);
+            }
+
+            transaction.commit();
+            System.out.println("Fase 3 completada correctament!");
 
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -37,9 +37,7 @@ public class Car extends Vehicle {
 
     public void setBrand(String brand) {
     }
-    public int getYear() {
-        return year;
-    }
+
     public void setYear(int year) {
         this.year = year;
     }
