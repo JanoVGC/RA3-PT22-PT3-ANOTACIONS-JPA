@@ -12,8 +12,6 @@ public class Student extends Person {
     @Column (name = "studentCode")
     private String studentCode;
 
-
-
     public String getStudentCode() {
         return studentCode;
     }
