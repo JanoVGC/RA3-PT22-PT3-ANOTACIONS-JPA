@@ -11,8 +11,8 @@ public class Plane extends Vehicle {
     private Boolean autopilot;
     private Integer tailNumber;
     private String brand;
-    private int year;
-    private int price;
+
+    private float price;
 
     public String getBrand() {
         return brand;
@@ -21,16 +21,11 @@ public class Plane extends Vehicle {
         this.brand = brand;
     }
 
-    public Integer getYear() {
-        return year;
-    }
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-    public Integer getPrice() {
+
+    public float getPrice() {
         return price;
     }
-    public void setPrice(Integer price) {
+    public void setPrice(float price) {
         this.price = price;
     }
     public Boolean getAutopilot() {

@@ -64,6 +64,8 @@ public class Main {
 
     }
 
+
+
     private static void fase1() {
 
         Session session = HibernateSession.getSessionFactory().openSession();
@@ -77,6 +79,7 @@ public class Main {
             student_1.setSurname("Lopez");
             student_1.setPhoneNumber(111111111);
             student_1.setStudentCode("STU001");
+
 
             Student student_2 = new Student();
             student_2.setName("Jordi");
@@ -164,6 +167,16 @@ public class Main {
             motorcycle_2.setPerson(teacher_3);
 
 
+            student_1.addVehicle(car_1);
+            student_2.addVehicle(car_2);
+
+            teacher_1.addVehicle(plane_1);
+            student_3.addVehicle(plane_2);
+
+            student_2.addVehicle(motorcycle_1);
+            teacher_3.addVehicle(motorcycle_2);
+
+
             // persist --> guarda la nova entitat de l'objecte a la base de dades
             session.persist(student_1);
             session.persist(student_2);
@@ -198,11 +211,13 @@ public class Main {
         Transaction transaction = session.beginTransaction();
 
         try {
-            Vehicle vehicle = session.get(Vehicle.class, 1); // es fa una lectura READ on el vehicle amb l'id 1 es recupera
+            Vehicle vehicle = session.get(Vehicle.class, 7); // vehicle id 7 --> es el primer id que m'apareix a la base de dades
+            Person person = vehicle.getPerson();             // persona id 1
 
             // actualitzacio UPDATE on es treu la relació del vehicle amb la persona
-            if (vehicle != null) {
-                vehicle.setPerson(null);
+            if (vehicle != null && person != null) {
+                person.removeVehicle(vehicle);
+                session.update(person);
             }
 
             transaction.commit();
@@ -222,13 +237,16 @@ public class Main {
         Transaction transaction = session.beginTransaction();
 
         try {
-            Vehicle vehicle = session.get(Vehicle.class, 1); // es fa una lectura READ on el vehicle amb l'id 1 es recupera
+
+            Vehicle vehicle = session.get(Vehicle.class, 7); // es fa una lectura READ on el vehicle amb l'id 7 es recupera
 
             // actualitzacio UPDATE on es treu la relació del vehicle amb la persona
             if (vehicle != null) {
-                vehicle.setBrand("Seat");
+
                 vehicle.setPrice(20000);
                 vehicle.setYear(2022);
+
+                session.update(vehicle);
             }
 
             transaction.commit();

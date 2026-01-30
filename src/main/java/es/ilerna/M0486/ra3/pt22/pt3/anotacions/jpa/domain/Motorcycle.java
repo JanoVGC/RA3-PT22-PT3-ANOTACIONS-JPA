@@ -10,8 +10,8 @@ public class Motorcycle extends Vehicle{
 
     private boolean hasSideCar;
     private String brand;
-    private int year;
-    private int price;
+
+    private float price;
 
     public boolean gethasSideCar() {
         return hasSideCar;
@@ -26,13 +26,10 @@ public class Motorcycle extends Vehicle{
         this.brand = brand;
     }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 

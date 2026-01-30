@@ -53,7 +53,7 @@ public abstract class Person  {
 
 
 
-    @OneToMany // Relació 1/N
+    @OneToMany(mappedBy = "person") // Relació 1/N
     // Una persona pot tenir molts vehicles
     private List<Vehicle> vehicles = new ArrayList<>();
 

@@ -10,8 +10,8 @@ public class Car extends Vehicle {
     private Integer doors;
     private Integer seats;
     private String brand;
-    private int year;
-    private int price;
+
+    private float price;
 
 
 
@@ -36,15 +36,14 @@ public class Car extends Vehicle {
     }
 
     public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
-    public int getPrice() {
+
+    public float getPrice() {
         return price;
     }
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
