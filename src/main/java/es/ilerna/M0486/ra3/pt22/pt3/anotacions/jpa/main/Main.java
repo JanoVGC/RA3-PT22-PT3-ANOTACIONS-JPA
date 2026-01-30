@@ -15,16 +15,16 @@ import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Plane;
 import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Motorcycle;
 import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Teacher;
 
-public class Main {
 
+public class Main {
 
     private static List<Person> people = new ArrayList<>();
     private static List<Vehicle> vehicles = new ArrayList<>();
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Session session = null;
-		Transaction transaction = null;
-		Scanner sc = new Scanner(System.in);
+        Session session = null;
+        Transaction transaction = null;
+        Scanner sc = new Scanner(System.in);
 
         int opcio;
 
@@ -58,12 +58,11 @@ public class Main {
 
         } while (opcio != 0);
 
-            sc.close();
+        sc.close();
 
-			HibernateSession.getSessionFactory().close();
+        HibernateSession.getSessionFactory().close();
 
-		}
-	}
+    }
 
     private static void fase1() {
 
@@ -77,4 +76,26 @@ public class Main {
 
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
